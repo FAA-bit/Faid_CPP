@@ -79,17 +79,15 @@ void sorteraVärden() {
                 double temp = mätvärden[i];
                 mätvärden[i] = mätvärden[j];
                 mätvärden[j] = temp;
-
-                //lägg till i den nya listan
             }
         }
     }
+    //lägg till i den nya listan
     for (int i = 0; i < antal; i++) {
         cout << mätvärden[i] << " \n";
 	}
 
 	//loopa igenom den nya listan och skriv ut värdena
-
     cout << "Mätvärden sorterade.\n";
 }
 
