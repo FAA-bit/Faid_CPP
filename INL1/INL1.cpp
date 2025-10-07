@@ -72,15 +72,24 @@ void sorteraVärden() {
         cout << "Ingen data att sortera.\n";
         return;
     }
+    //skapa en lista här
     for (int i = 0; i < antal - 1; i++) {
         for (int j = i + 1; j < antal; j++) {
             if (mätvärden[i] > mätvärden[j]) {
                 double temp = mätvärden[i];
                 mätvärden[i] = mätvärden[j];
                 mätvärden[j] = temp;
+
+                //lägg till i den nya listan
             }
         }
     }
+    for (int i = 0; i < antal; i++) {
+        cout << mätvärden[i] << " \n";
+	}
+
+	//loopa igenom den nya listan och skriv ut värdena
+
     cout << "Mätvärden sorterade.\n";
 }
 
