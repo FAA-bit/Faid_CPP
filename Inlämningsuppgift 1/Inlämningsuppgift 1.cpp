@@ -6,32 +6,34 @@
 #include <locale>
 #include <cmath>
 
+using namespace std;
+
 int main() {
     
 	SetConsoleOutputCP(CP_UTF8);
 	setlocale(LC_ALL, "SV_se");
-	std::cout << "Hej, världen!" << std::endl;
+	cout << "Hej, världen!" << std::endl;
 
 	const int MAX = 100;
 	double mätvärden [MAX];
 	int antal = 0;
 	double input;
-	std::cout << "Mata in mätvärden (avsluta med ´f´ ):" << std::endl;
+	cout << "Mata in mätvärden (avsluta med ´f´ ):" << std::endl;
 	while (antal < MAX) {
-		std::cout << "Mätvärde " << (antal + 1) << ": ";
-		std::cin >> input;
+		cout << "Mätvärde " << (antal + 1) << ": ";
+		cin >> input;
 
 		// visa felmeddelande vid felaktig inmatning
-		if (std::cin.fail()) {
-			std::cin.clear();
+		if (cin.fail()) {
+			cin.clear();
 
 			char c;
-			std::cin >> c;
+			cin >> c;
 			if (c == 'f' || c == 'F') {
 				break;
 			}
 			else {
-				std::cout << "Felaktig inmatning, försök igen." << std::endl;
+				cout << "Felaktig inmatning, försök igen." << std::endl;
 				continue;
 			}
 		}
@@ -39,11 +41,11 @@ int main() {
 		antal++;
 
 	}
-	std::cout << "Du matade in " << antal << " mätvärden." << std::endl;
+	cout << "Du matade in " << antal << " mätvärden." << std::endl;
 
 	// Beräkna: Antalvärden, summa, medelvärde, min- och max-värde, varians och standardavvikelse.
 	if (antal == 0) {
-		std::cout << "Inga mätvärden inmatade." << std::endl;
+		cout << "Inga mätvärden inmatade." << std::endl;
 		return 0;
 	}
 	double summa = 0.0;
@@ -65,39 +67,39 @@ int main() {
 	}
 	varians /= antal;
 	double standardavvikelse = std::sqrt(varians);
-	std::cout << "Summa: " << summa << std::endl;
-	std::cout << "Medelvärde: " << medelvärde << std::endl;
-	std::cout << "Min-värde: " << min << std::endl;
-	std::cout << "Max-värde: " << max << std::endl;
-	std::cout << "Varians: " << varians << std::endl;
-	std::cout << "Standardavvikelse: " << standardavvikelse << std::endl;
+	cout << "Summa: " << summa << std::endl;
+	cout << "Medelvärde: " << medelvärde << std::endl;
+	cout << "Min-värde: " << min << std::endl;
+	cout << "Max-värde: " << max << std::endl;
+	cout << "Varians: " << varians << std::endl;
+	cout << "Standardavvikelse: " << standardavvikelse << std::endl;
 
 	// Menygränssnitt: lägg till nya mätvärden, visa statistiken, Sök efter ett visst värde, sortera,  avsluta programmet.
 	int val;
 	do {
-		std::cout << "\nMeny:\n";
-		std::cout << "1. Lägg till nya mätvärden\n";
-		std::cout << "2. Visa statistiken\n";
-		std::cout << "3. Sortera mätvärden\n";
-		std::cout << "4. Sök efter ett visst värde\n";
-		std::cout << "5. Avsluta\n";
-		std::cout << "Välj ett alternativ (1-5): ";
-		std::cin >> val;
+		cout << "\nMeny:\n";
+		cout << "1. Lägg till nya mätvärden\n";
+		cout << "2. Visa statistiken\n";
+		cout << "3. Sortera mätvärden\n";
+		cout << "4. Sök efter ett visst värde\n";
+		cout << "5. Avsluta\n";
+		cout << "Välj ett alternativ (1-5): ";
+		cin >> val;
 		switch (val) {
 			case 1:
 				// Lägg till nya mätvärden
 				while (antal < MAX) {
-					std::cout << "Mätvärde " << (antal + 1) << ": ";
-					std::cin >> input;
-					if (std::cin.fail()) {
-						std::cin.clear();
+					cout << "Mätvärde " << (antal + 1) << ": ";
+					cin >> input;
+					if (cin.fail()) {
+						cin.clear();
 						char c;
-						std::cin >> c;
+						cin >> c;
 						if (c == 'f' || c == 'F') {
 							break;
 						}
 						else {
-							std::cout << "Felaktig inmatning, försök igen." << std::endl;
+							cout << "Felaktig inmatning, försök igen." << std::endl;
 							continue;
 						}
 					}
@@ -107,12 +109,12 @@ int main() {
 				break;
 			case 2:
 				// Visa statistiken
-				std::cout << "Summa: " << summa << std::endl;
-				std::cout << "Medelvärde: " << medelvärde << std::endl;
-				std::cout << "Min-värde: " << min << std::endl;
-				std::cout << "Max-värde: " << max << std::endl;
-				std::cout << "Varians: " << varians << std::endl;
-				std::cout << "Standardavvikelse: " << standardavvikelse << std::endl;
+				cout << "Summa: " << summa << std::endl;
+				cout << "Medelvärde: " << medelvärde << std::endl;
+				cout << "Min-värde: " << min << std::endl;
+				cout << "Max-värde: " << max << std::endl;
+				cout << "Varians: " << varians << std::endl;
+				cout << "Standardavvikelse: " << standardavvikelse << std::endl;
 				break;
 			case 3:
 				// Sortera mätvärden
@@ -125,30 +127,30 @@ int main() {
 						}
 					}
 				}
-				std::cout << "Mätvärden sorterade." << std::endl;
+				cout << "Mätvärden sorterade." << std::endl;
 				break;
 			case 4:
 				// Sök efter ett visst värde
-				std::cout << "Ange värde att söka efter: ";
-				std::cin >> input;
+				cout << "Ange värde att söka efter: ";
+				cin >> input;
 				{
 					bool found = false;
 					for (int i = 0; i < antal; i++) {
 						if (mätvärden[i] == input) {
-							std::cout << "Värdet " << input << " hittades på position " << (i + 1) << "." << std::endl;
+							cout << "Värdet " << input << " hittades på position " << (i + 1) << "." << std::endl;
 							found = true;
 						}
 					}
 					if (!found) {
-						std::cout << "Värdet " << input << " hittades inte." << std::endl;
+						cout << "Värdet " << input << " hittades inte." << std::endl;
 					}
 				}
 				break;
 			case 5:
-				std::cout << "Avslutar programmet." << std::endl;
+				cout << "Avslutar programmet." << std::endl;
 				break;
 			default:
-				std::cout << "Felaktigt val, försök igen." << std::endl;
+				cout << "Felaktigt val, försök igen." << std::endl;
 				break;
 
 		}
@@ -157,7 +159,7 @@ int main() {
 		&& antal > 0
 		);
 	if (antal == MAX) {
-		std::cout << "Max antal mätvärden nått, avslutar programmet." << std::endl;
+		cout << "Max antal mätvärden nått, avslutar programmet." << std::endl;
 	}
 
 	return 0;
