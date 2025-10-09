@@ -6,7 +6,7 @@
 using namespace std;
 
 void swap(int* a, int* b) {
-    int temp = *a;
+	int temp = *a;  // * dereferensiering - Hämtar värdet på adressen.
     *a = *b;
     *b = temp;
 }
@@ -28,7 +28,7 @@ int main()
     int y = 20;
 
     cout << "Before swap: x = " << x << ", y = " << y << endl;
-	swap(&x, &y); // Vi kallar på swap med adressen till x och y ( referens till minnet)
+	swap(&x, &y); // & adressoperator - Hämtar adressen till en variabel.
     cout << "After swap: x = " << x << ", y = " << y << endl;
 
     bool led = false;
