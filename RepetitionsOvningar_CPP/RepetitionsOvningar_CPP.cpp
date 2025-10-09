@@ -15,31 +15,35 @@ int main() {
 
 	// Övningar: Variabler och datatyper
 	// Deklarera och initiera variabler av typerna int, float, double och char.
-	// Be användaren mata in två tal och beräkna summan, skillnaden, produkten och kvoten.
-	// Skriv ett program som konverterar Celsius till Fahrenheit.
-	//  Deklarera en konstant för Pi och använd den för att beräkna cirkelns area.
 	int a = 10;
 	int b = 5;
 	float c = 3.14f;
 	double d = 2.71828;
 	char e = 'A';
-	cout << "Ange två tal: ";
+
+	// Be användaren mata in två tal och beräkna summan, skillnaden, produkten och kvoten.
 	int num1, num2;
-	cin >> num1 >> num2;
+	cout << "Ange num1: ";
+	cin >> num1;
+	cout << "Ange num2: ";
+	cin >> num2;
 	cout << "Summa: " << num1 + num2 << endl;
 	cout << "Skillnad: " << num1 - num2 << endl;
 	cout << "Produkt: " << num1 * num2 << endl;
-	cout << "Kvot: " << static_cast<float>(num1) / num2 << endl;
+	cout << "Kvot: " << (num1) / num2 << endl;
+
+	// Skriv ett program som konverterar Celsius till Fahrenheit.
 	float celsius;
 	cout << "Ange temperatur i Celsius: ";
 	cin >> celsius;
 	float fahrenheit = (celsius * 9 / 5) + 32;
 	cout << "Temperatur i Fahrenheit: " << fahrenheit << endl;
-	const double pi = 3.14;
-	double radius;
+
+	//  Deklarera en konstant för Pi och använd den för att beräkna cirkelns area.
+	float radius;
 	cout << "Ange cirkelns radie: ";
 	cin >> radius;
-	double area = pi * radius * radius;
+	float area = 3.14f * radius * radius;
 	cout << "Cirkelns area: " << area << endl;
 
 
