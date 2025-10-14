@@ -48,7 +48,7 @@ int main() {
     getchar();
 
     // Greet the user
-    printf("Hello My name is %s\nAm %d years old!\n", name, age);
+	printf("Hello My name is %s\nAm %d years old!\n", name, age); // %s for string, %d for integer
 
 	// Räkna vokaler som finns i namnet
 	int vowel_count = 0;
