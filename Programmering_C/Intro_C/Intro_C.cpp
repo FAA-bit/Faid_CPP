@@ -21,6 +21,36 @@ void truncate_string(char* str, int max_length) {
     }
 }
 
+// Command handler function
+void handle_commands() {
+    char command[10];
+    int len;
+
+    while (1) {
+        printf("Enter command (LED=ON, LED=OFF, EXIT):\n");
+        fgets(command, sizeof(command), stdin);
+
+        // Remove newline character if present
+        len = my_strlen(command);
+        if (len > 0 && command[len - 1] == '\n') { 
+            command[len - 1] = '\0';
+        }
+
+        if (strcmp(command, "LED=ON") == 0) {
+            printf("LED is now ON\n");
+        }
+        else if (strcmp(command, "LED=OFF") == 0) {
+            printf("LED is now OFF\n");
+        }
+        else if (strcmp(command, "EXIT") == 0) {
+            printf("Exiting program.\n");
+            break;
+        }
+        else {
+            printf("Unknown command. Please try again.\n");
+        }
+    }
+}
 
 int main() {
     SetConsoleOutputCP(65001); 
@@ -70,6 +100,10 @@ int main() {
 
     // Show name length
     printf("Your name has %d characters.\n", my_strlen(name));
+
+	// Handle commands
+	handle_commands();
+
 
     return 0;
 }
