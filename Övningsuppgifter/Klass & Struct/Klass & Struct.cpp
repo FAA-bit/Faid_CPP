@@ -8,9 +8,15 @@
 int main() {
 
     // Position-test
-    Position p{ 1.0, 2.0 };     // Skapa ett objekt med startvärden
-    p.move(3.0, -1.5);        // Flytta punkten
-    p.print();                // Skriv ut ny position
+    Position p1{ 1.0, 2.0 };     // Skapa ett objekt med startvärden
+    Position p2{ 3.0, 3.0 };
+    Position p3{ 4.0, 5.0 };
+    p1.move(3.0, -1.5);        // Flytta punkten
+    p2.move(3.0, -1.5);
+    p3.move(3.0, -1.5);
+    p1.print();                // Skriv ut ny position
+    p2.print();
+    p3.print();
 
     // Device-test
     Device d1(111, "Sensor A");
