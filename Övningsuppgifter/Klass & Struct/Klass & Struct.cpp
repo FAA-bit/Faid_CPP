@@ -19,14 +19,16 @@ int main() {
     p3.print();
 
     // Device-test
-    Device d1(111, "Sensor A");
-    Device d2(144, "Sensor B");
+    Device d1(1122, "Hooyo's device");
+    Device d2(1234, "Aabe's device");
+    Device d3(1567, "Alpha's device");
 
     d1.printInfo();
     d2.printInfo();
+    d3.printInfo();
 
-    d1.rename("Sensor Faid");
-    d1.printInfo();
+    d3.rename("Faid's device");
+    d3.printInfo();
 
     return 0;
 }
