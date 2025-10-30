@@ -8,7 +8,7 @@
 int main() {
 
     // Position-test
-    Position p{ 0.0, 0.0 };     // Skapa ett objekt med startvärden
+    Position p{ 1.0, 2.0 };     // Skapa ett objekt med startvärden
     p.move(3.0, -1.5);        // Flytta punkten
     p.print();                // Skriv ut ny position
 
