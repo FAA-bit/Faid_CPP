@@ -16,6 +16,14 @@ void FoodItem::printInfo() const {
     std::cout << name_ << " – " << price_ << " kr (" << calories_ << " kcal)\n";
 }
 
+// ---------- ToolItem ----------
+ToolItem::ToolItem(const std::string& name, int price, int durability)
+    : Item(name, price), durability_{ durability } {
+}
+void ToolItem::printInfo() const {
+    std::cout << name_ << " – " << price_ << " kr (" << durability_ << " uses)\n";
+}
+
 // ---------- Shop ----------
 Shop::Shop() : balance_(0) {}
 void Shop::addItem(std::unique_ptr<Item> item) { inventory_.push_back(std::move(item)); }

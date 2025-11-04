@@ -11,10 +11,11 @@ int main() {
     shop.addItem(std::make_unique<Item>("Pen", 10));
     shop.addItem(std::make_unique<FoodItem>("Milk", 12, 150));
     shop.addItem(std::make_unique<FoodItem>("Godis", 8, 30));
+	shop.addItem(std::make_unique<ToolItem>("Hammer", 50, 100));
 
     Customer customer1("Alice", 40, { "Apple", "Milk", "Bread" });
     Customer customer2("Bob-Bob", 30, { "Notebook", "Pen" });
-    Customer customer3("Faid", 15, { "Godis" });
+    Customer customer3("Faid", 75, { "Godis", "Hammer"});
 
     customer1.tryToBuy(shop);
     customer2.tryToBuy(shop);

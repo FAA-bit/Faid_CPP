@@ -30,6 +30,14 @@ public:
     void printInfo() const override;
 };
 
+// ---------------- ToolItem ----------------
+class ToolItem : public Item {
+	int durability_;
+public:
+    ToolItem(const std::string& name, int price, int durability);
+    void printInfo() const override;
+};
+
 // ---------------- Shop ----------------
 class Shop {
     std::vector<std::unique_ptr<Item>> inventory_;
